@@ -10,24 +10,24 @@ import "./testimonial.css";
 const testimonialData = [
   {
     message:
-      "Working with this team was a fantastic experience. Their attention to detail and commitment to quality exceeded our expectations.",
-    quote: `From the initial consultation to the final delivery, every step was handled professionally. The end result was a product that not only met our needs but also impressed our stakeholders. Highly recommended!`,
-    name: "Esther Howard",
-    designation: "Managing Director, ABC Company",
+      "Samuel delivered a very professional and accurate translation for our education project. He was fast, reliable, and easy to work with.",
+    quote: `The translation quality was exceptional, and Samuel's understanding of cultural nuances made our educational materials much more effective for our target audience. His attention to detail and quick turnaround time were impressive.`,
+    name: "Education Project Coordinator",
+    designation: "International Education Initiative",
   },
   {
     message:
-      "Their expertise in UI/UX design helped us transform our digital presence and improve user engagement.",
-    quote: `The team demonstrated a deep understanding of our requirements and delivered a solution that was both visually appealing and highly functional. Communication was clear throughout the project.`,
-    name: "Ali Haider",
-    designation: "COO, XYZ Company",
+      "I appreciated Samuel's attention to detail and cultural understanding in his translations. Highly recommended.",
+    quote: `Samuel provided excellent translation services for my business documents. His ability to maintain the professional tone while ensuring cultural appropriateness was outstanding. He's become my go-to translator for all my business needs.`,
+    name: "Entrepreneur & Small Business Owner",
+    designation: "Local Business Owner",
   },
   {
     message:
-      "Professional, reliable, and creative—everything you want in a development partner.",
-    quote: `They delivered our project on time and went above and beyond to ensure our satisfaction. The new features have made a significant difference for our users. We look forward to working together again.`,
-    name: "Elon Max",
-    designation: "Managing Director, KFC Company",
+      "Samuel's work with our nonprofit organization has been invaluable for our communication efforts in Rwanda.",
+    quote: `As the Rwanda Representative for Dream 'n Dare Africa, Samuel has provided exceptional translation and communication support. His dedication to helping us connect with local communities has made a significant impact on our mission.`,
+    name: "Nonprofit Organization Director",
+    designation: "Dream 'n Dare Africa",
   },
 ];
 

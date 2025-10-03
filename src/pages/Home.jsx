@@ -5,7 +5,7 @@ import Portfolio from "../components/portfolio/Portfolio";
 import WorkTogether from "../components/workTogether/WorkTogether";
 import Blog from "../components/blog/Blog";
 import Profession from "../components/profession/Profession";
-import HappyClients from "../components/happyClients/HappyClients";
+import EducationCertifications from "../components/happyClients/HappyClients";
 import Testimonial from "../components/testimonial/Testimonial";
 import Contact from "../components/contact/Contact";
 
@@ -18,22 +18,22 @@ const Home = () => {
           <Profile />
         </div>
       </div>
-      {/* <div className="bg-soft-white pt-30">
+      <div className="bg-soft-white pt-30">
         <WorkProcess />
       </div>
       <Portfolio />
       <div className="bg-gray-900">
         <WorkTogether />
       </div>
-      <div className="blog-background">
+      {/* <div className="blog-background">
         <Blog />
-      </div>
+      </div> */}
       <div className="bg-soft-white">
         <Profession />
       </div>
-      <HappyClients />
+      <EducationCertifications />
       <Testimonial />
-      <Contact /> */}
+      <Contact />
     </div>
   );
 };

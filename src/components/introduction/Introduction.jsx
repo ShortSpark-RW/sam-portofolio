@@ -7,17 +7,17 @@ const informationSummaryData = [
   {
     id: 1,
     title: "Experience",
-    description: "15 Y.",
+    description: "3+ Y.",
   },
   {
     id: 2,
     title: "Projects Completed",
-    description: "250+",
+    description: "100+",
   },
   {
     id: 3,
     title: "Happy Clients",
-    description: "58",
+    description: "50+",
   },
 ];
 
@@ -30,23 +30,25 @@ const Introduction = () => {
       <div className="w-full flex flex-col justify-between max-lg:text-center">
         <div className="pt-13 me-31.5 w-full lg:w-auto transition-all duration-500">
           <p className="text-3xl xxs:text-4xl sm:max-xl:text-5xl xl:text-6xl font-semibold w-full">
-            Hello, I’m
+            Hello, I'm
             <span className="text-nowrap shrink-0 inline-block w-full">
               Samuel Ndagijimana
             </span>
           </p>
           <p className="text-xs xxs:text-lg lg:text-[18px] my-6">
-            I'm a Freelance <span className="bg-highlight">UI/UX Designer</span>{" "}
-            and <span className="bg-highlight"> Developer</span> based in
-            London, England. I strives to build immersive and beautiful web
-            applications through carefully crafted code and user-centric design.
+            <span className="bg-highlight">Professional English ↔ Kinyarwanda Translator | Content Writer | Digital Skills Enthusiast | Copywriter</span>
+          </p>
+          <p className="text-xs xxs:text-lg lg:text-[18px] my-6">
+            "I help <span className="bg-highlight">businesses, organizations, and individuals</span>{" "} 
+            communicate effectively in <span className="bg-highlight">English and
+            Kinyarwanda</span> with accurate, culturally appropriate translations."
           </p>
           <p className="text-center lg:text-start">
             <a
               className="btn-primary btn btn-xs xxs:btn-lg text-white"
-              href="mailto:example@gmail.com"
+              href="mailto:sndagijimana20@gmail.com"
             >
-              Say Hello!
+              Hire Me / Contact Me
             </a>
           </p>
         </div>

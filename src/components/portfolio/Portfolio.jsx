@@ -10,55 +10,55 @@ const projectData = [
   {
     id: 1,
     image: card1,
-    category: "UI-UX DESIGN",
-    title: "Product Admin Dashboard",
+    category: "TRANSLATION",
+    title: "Health Education Article Translation",
     description:
-      "I focus on crafting smooth, responsive interfaces that balance aesthetic appeal with practical functionality.",
+      "Translated comprehensive health education materials from English to Kinyarwanda, ensuring cultural appropriateness and medical accuracy.",
     link: "#!",
   },
   {
     id: 2,
     image: card2,
-    category: "UI-UX DESIGN",
-    title: "Product Admin Dashboard",
+    category: "ACADEMIC TRANSLATION",
+    title: "Educational Document Translation",
     description:
-      "Designed an intuitive dashboard for product management, emphasizing clarity and user efficiency.",
+      "Provided accurate translation of academic documents, research papers, and educational materials for international students and institutions.",
     link: "#!",
   },
   {
     id: 3,
     image: card3,
-    category: "UI-UX DESIGN",
-    title: "Product Admin Dashboard",
+    category: "BUSINESS TRANSLATION",
+    title: "Business Communication Translation",
     description:
-      "Developed a modern admin panel with a focus on usability and seamless navigation for end users and so on.",
+      "Translated business proposals, contracts, and corporate communications ensuring professional tone and cultural sensitivity.",
     link: "#!",
   },
   {
     id: 4,
     image: card4,
-    category: "UI-UX DESIGN",
-    title: "Product Admin Dashboard",
+    category: "CONTENT WRITING",
+    title: "Blog Content Creation",
     description:
-      "Created a responsive dashboard layout that adapts smoothly across devices and screen sizes and so on.",
+      "Created engaging blog posts and articles for businesses, focusing on SEO optimization and audience engagement.",
     link: "#!",
   },
   {
     id: 5,
     image: card5,
-    category: "UI-UX DESIGN",
-    title: "Product Admin Dashboard",
+    category: "SOCIAL MEDIA",
+    title: "Social Media Marketing",
     description:
-      "Implemented interactive charts and widgets to visualize product data effectively for stakeholders.",
+      "Developed and managed social media strategies for local businesses, increasing online presence and customer engagement.",
     link: "#!",
   },
   {
     id: 6,
     image: card6,
-    category: "UI-UX DESIGN",
-    title: "Product Admin Dashboard",
+    category: "NONPROFIT SUPPORT",
+    title: "Dream 'n Dare Africa Projects",
     description:
-      "Enhanced user experience by streamlining workflows and optimizing interface components and so on.",
+      "Provided translation and communication support for international nonprofit organization, facilitating cross-cultural collaboration.",
     link: "#!",
   },
 ];
@@ -73,8 +73,8 @@ const Portfolio = () => {
         <div className="max-sm:px-2 text-center mx-auto max-w-144.25">
           <p className="section-title ">Portfolio</p>
           <p className="font-normal text-[18px] max-sm:text-[14px] pt-6 text-gray-400">
-            Here's a selection of my recent work, showcasing my skills in
-            creating user-centric and visually appealing interfaces.
+            Here's a selection of my recent work, showcasing my expertise in
+            translation, content creation, and business support services.
           </p>
         </div>
       </div>
@@ -87,10 +87,10 @@ const Portfolio = () => {
       </div>
       <div className="text-center">
         <a
-          href="#!"
+          href="#contact"
           className="btn btn-primary py-3 px-6 mt-12.5 text-center text-[16px] font-semibold"
         >
-          More Project
+          Request a Quote
         </a>
       </div>
     </div>
