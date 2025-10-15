@@ -113,9 +113,11 @@ const Profile = () => {
           <div className="flex justify-center gap-4 mt-8">
             <a
               className="btn xxs:btn-lg px-6 max-xs:px-2 xxs:py-3 btn-primary text-xs xxs:text-[14px] sm:text-[16px]"
-              href="#portfolio"
+              href="/samuel-ndagijimana-cv.pdf"
+              download="Samuel-Ndagijimana-CV.pdf"
+              target="_blank"
             >
-              My Portfolio
+              Download My CV
             </a>
             <a
               className="btn xxs:btn-lg px-6 max-xs:px-2 xxs:py-3 hover:border-picto-primary bg-white duration-300 transition-all hover:text-picto-primary text-xs xxs:text-[14px] sm:text-[16px]"

@@ -1,10 +1,10 @@
 import Projects from "./Projects";
-import card1 from "../../assets/images/portfolio-images/card-1.png";
-import card2 from "../../assets/images/portfolio-images/card-2.png";
-import card3 from "../../assets/images/portfolio-images/card-3.png";
-import card4 from "../../assets/images/portfolio-images/card-4.png";
-import card5 from "../../assets/images/portfolio-images/card-5.png";
-import card6 from "../../assets/images/portfolio-images/card-6.png";
+import card1 from "../../assets/images/portfolio-images/card-11.png";
+import card2 from "../../assets/images/portfolio-images/card-22.png";
+import card3 from "../../assets/images/portfolio-images/card-33.png";
+// import card4 from "../../assets/images/portfolio-images/card-4.png";
+// import card5 from "../../assets/images/portfolio-images/card-5.png";
+// import card6 from "../../assets/images/portfolio-images/card-6.png";
 
 const projectData = [
   {
@@ -14,7 +14,7 @@ const projectData = [
     title: "Health Education Article Translation",
     description:
       "Translated comprehensive health education materials from English to Kinyarwanda, ensuring cultural appropriateness and medical accuracy.",
-    link: "#!",
+    link: "#contact",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const projectData = [
     title: "Educational Document Translation",
     description:
       "Provided accurate translation of academic documents, research papers, and educational materials for international students and institutions.",
-    link: "#!",
+    link: "#contact",
   },
   {
     id: 3,
@@ -32,35 +32,35 @@ const projectData = [
     title: "Business Communication Translation",
     description:
       "Translated business proposals, contracts, and corporate communications ensuring professional tone and cultural sensitivity.",
-    link: "#!",
+    link: "#contact",
   },
-  {
-    id: 4,
-    image: card4,
-    category: "CONTENT WRITING",
-    title: "Blog Content Creation",
-    description:
-      "Created engaging blog posts and articles for businesses, focusing on SEO optimization and audience engagement.",
-    link: "#!",
-  },
-  {
-    id: 5,
-    image: card5,
-    category: "SOCIAL MEDIA",
-    title: "Social Media Marketing",
-    description:
-      "Developed and managed social media strategies for local businesses, increasing online presence and customer engagement.",
-    link: "#!",
-  },
-  {
-    id: 6,
-    image: card6,
-    category: "NONPROFIT SUPPORT",
-    title: "Dream 'n Dare Africa Projects",
-    description:
-      "Provided translation and communication support for international nonprofit organization, facilitating cross-cultural collaboration.",
-    link: "#!",
-  },
+  // {
+  //   id: 4,
+  //   image: card4,
+  //   category: "CONTENT WRITING",
+  //   title: "Blog Content Creation",
+  //   description:
+  //     "Created engaging blog posts and articles for businesses, focusing on SEO optimization and audience engagement.",
+  //   link: "#!",
+  // },
+  // {
+  //   id: 5,
+  //   image: card5,
+  //   category: "SOCIAL MEDIA",
+  //   title: "Social Media Marketing",
+  //   description:
+  //     "Developed and managed social media strategies for local businesses, increasing online presence and customer engagement.",
+  //   link: "#!",
+  // },
+  // {
+  //   id: 6,
+  //   image: card6,
+  //   category: "NONPROFIT SUPPORT",
+  //   title: "Dream 'n Dare Africa Projects",
+  //   description:
+  //     "Provided translation and communication support for international nonprofit organization, facilitating cross-cultural collaboration.",
+  //   link: "#!",
+  // },
 ];
 
 const Portfolio = () => {
@@ -90,7 +90,7 @@ const Portfolio = () => {
           href="#contact"
           className="btn btn-primary py-3 px-6 mt-12.5 text-center text-[16px] font-semibold"
         >
-          Request a Quote
+          Request a meeting
         </a>
       </div>
     </div>
