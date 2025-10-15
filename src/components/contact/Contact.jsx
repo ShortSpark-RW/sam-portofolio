@@ -3,6 +3,7 @@ import {
   faLocationDot,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 import Address from "./Address";
 import Form from "./Form";
 import SocialMedia from "../common/socialMedia/SocialMedia";
@@ -25,15 +26,28 @@ const addressData = [
   },
 ];
 
+const leftVariant = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+const formVariant = {
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 90, damping: 16 } },
+};
+
 const Contact = () => {
   return (
     <div className="relative -bottom-15 -mt-15 z-10 px-2">
-      <div
+      <motion.div
         className="content p-4 md:p-10 lg:p-22 bg-white rounded-2xl shadow-[0px_0px_90px_9px_rgba(0,_0,_0,_0.1)]"
         id="contact"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.18 }}
+        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
       >
         <div className="flex flex-col-reverse lg:gap-5 xl:gap-25.75 lg:flex-row justify-between">
-          <div>
+          <motion.div variants={leftVariant}>
             <div>
               <p className="text-[35px] max-lg:hidden font-semibold text-nowrap text-[#132238]">
                 Let's discuss your Translation Project
@@ -51,15 +65,16 @@ const Contact = () => {
             <div className="w-full max-lg:text-center max-md:mb-4">
               <SocialMedia />
             </div>
-          </div>
-          <div className="w-full overflow-y-scroll py-6.5">
+          </motion.div>
+
+          <motion.div className="w-full overflow-y-scroll py-6.5" variants={formVariant}>
             <p className="text-xl mb-2 xs:text-2xl sm:text-2xl md:text-[38px] font-semibold text-[#132238] lg:hidden text-center">
               Let's discuss your Translation Project
             </p>
             <Form />
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

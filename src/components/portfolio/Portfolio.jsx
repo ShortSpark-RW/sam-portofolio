@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Projects from "./Projects";
 import card1 from "../../assets/images/portfolio-images/card-11.png";
 import card2 from "../../assets/images/portfolio-images/card-22.png";
@@ -63,37 +64,76 @@ const projectData = [
   // },
 ];
 
+const section = {
+  hidden: { opacity: 0, y: 14 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 92, damping: 15 },
+  },
+};
+const card = {
+  hidden: { opacity: 0, y: 10, scale: 0.995 },
+  show: (i) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { delay: i * 0.06, duration: 0.45 },
+  }),
+};
+
 const Portfolio = () => {
   return (
-    <div
+    <motion.div
       className="content mt-10 md:mt-15 xl:mt-25 mb-10 md:mb-25 max-xxl:p-2"
       id="portfolio"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.18 }}
+      variants={section}
     >
       <div className="xl:mb-17.5 mb-5">
-        <div className="max-sm:px-2 text-center mx-auto max-w-144.25">
+        <motion.div
+          className="max-sm:px-2 text-center mx-auto max-w-144.25"
+          variants={section}
+        >
           <p className="section-title ">Portfolio</p>
-          <p className="font-normal text-[18px] max-sm:text-[14px] pt-6 text-gray-400">
+          <motion.p
+            className="font-normal text-[18px] max-sm:text-[14px] pt-6 text-gray-400"
+            variants={section}
+          >
             Here's a selection of my recent work, showcasing my expertise in
             translation, content creation, and business support services.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </div>
       <div className="mx-auto flex justify-center">
         <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-6">
           {projectData.map((data, index) => (
-            <Projects data={data} key={index} />
+            <motion.div
+              key={index}
+              custom={index}
+              variants={card}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <Projects data={data} />
+            </motion.div>
           ))}
         </div>
       </div>
       <div className="text-center">
-        <a
+        <motion.a
           href="#contact"
           className="btn btn-primary py-3 px-6 mt-12.5 text-center text-[16px] font-semibold"
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.18 }}
         >
           Request a meeting
-        </a>
+        </motion.a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import { EffectFade, Navigation, Pagination } from "swiper/modules";
 import TestimonialTemplate from "./TestimonialTemplate";
 import "./testimonial.css";
+import { motion } from "framer-motion";
 
 const testimonialData = [
   {
@@ -31,28 +32,50 @@ const testimonialData = [
   },
 ];
 
+const section = {
+  hidden: { opacity: 0, y: 14 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 90, damping: 15 },
+  },
+};
+
 const Testimonial = () => {
   return (
-    <div className="flex mx-auto justify-center px-2 max-w-218 pb-10 md:pb-25">
+    <motion.div
+      className="flex mx-auto justify-center px-2 max-w-218 pb-10 md:pb-25"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.18 }}
+      variants={section}
+    >
       <div className="w-full h-full cursor-grab">
-        <p className="section-title mb-6 text-center">Testimonial</p>
-        <Swiper
-          id="testimonialSwiper"
-          spaceBetween={30}
-          navigation={false}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[EffectFade, Navigation, Pagination]}
+        <motion.p
+          className="section-title mb-6 text-center"
+          variants={section}
         >
-          {testimonialData.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <TestimonialTemplate testimonial={testimonial} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          Testimonial
+        </motion.p>
+        <motion.div variants={section}>
+          <Swiper
+            id="testimonialSwiper"
+            spaceBetween={30}
+            navigation={false}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[EffectFade, Navigation, Pagination]}
+          >
+            {testimonialData.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <TestimonialTemplate testimonial={testimonial} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

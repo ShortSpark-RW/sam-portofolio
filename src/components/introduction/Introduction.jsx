@@ -1,6 +1,7 @@
 import person from "../../assets/images/person.png";
 import "./introduction.css";
 import InformationSummary from "./InformationSummary";
+import { motion } from "framer-motion";
 
 // Information summary data
 const informationSummaryData = [
@@ -21,14 +22,29 @@ const informationSummaryData = [
   },
 ];
 
+const introText = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55 } },
+};
+const introImage = {
+  hidden: { opacity: 0, y: 18, scale: 0.995 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 80, damping: 14 } },
+};
+
 const Introduction = () => {
   return (
     <div
       className="flex max-lg:flex-col-reverse sm:justify-between pt-10 lg:pt-31.5 lg:mb-27.5 max-xl:gap-2 p-2 max-xxl:px-4"
       id="introduction"
     >
-      <div className="w-full flex flex-col justify-between max-lg:text-center">
-        <div className="pt-13 me-31.5 w-full lg:w-auto transition-all duration-500">
+      <motion.div
+        className="w-full flex flex-col justify-between max-lg:text-center"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
+      >
+        <motion.div className="pt-13 me-31.5 w-full lg:w-auto transition-all duration-500" variants={introText}>
           <p className="text-3xl xxs:text-4xl sm:max-xl:text-5xl xl:text-6xl font-semibold w-full">
             Hello, I'm
             <span className="text-nowrap shrink-0 inline-block w-full">
@@ -51,24 +67,30 @@ const Introduction = () => {
               Hire Me / Contact Me
             </a>
           </p>
-        </div>
-        <div className="mx-auto lg:mx-0 relative">
+        </motion.div>
+
+        <motion.div className="mx-auto lg:mx-0 relative" variants={introText}>
           <div className="grid max-xxs:grid-flow-col grid-cols-3 w-fit mt-10 gap-1">
             {informationSummaryData.map((item) => (
               <InformationSummary key={item.id} item={item} />
             ))}
           </div>
-        </div>
-      </div>
-      <div
+        </motion.div>
+      </motion.div>
+
+      <motion.div
         className={`max-w-134 w-full h-full max-lg:mx-auto aspect-[536/636] relative`}
+        variants={introImage}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.35 }}
       >
         <img
           className={`shadow-2xl shadow-gray-200 w-full h-full absolute bottom-0 object-cover bg-white rounded-3xl`}
           src={person}
           alt="person"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };

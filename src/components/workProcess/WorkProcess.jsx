@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import WorkSteps from "./WorkSteps";
 
 const workStepData = [
@@ -35,11 +36,33 @@ const workStepData = [
   },
 ];
 
+const sectionVariant = {
+  hidden: { opacity: 0, y: 14 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 90, damping: 16 },
+  },
+};
+const itemVariant = {
+  hidden: { opacity: 0, y: 8, scale: 0.995 },
+  show: (i) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { delay: i * 0.06, duration: 0.45 },
+  }),
+};
+
 const WorkProcess = () => {
   return (
-    <div
+    <motion.div
       className="content grid xl:grid-cols-2 xl:items-center px-2 py-5 md:py-10 lg:py-25 xl:py-35 max-xxl:px-4"
       id="work-process"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={sectionVariant}
     >
       <div className="lg:pe-10 xl:pe-35.75 max-xs:mb-3 max-xl:mb-8">
         <p className="section-title max-xl:text-center">Translation Process</p>
@@ -57,17 +80,25 @@ const WorkProcess = () => {
       <div className="grid xs:grid-cols-2 justify-end my-2 w-fit mx-auto ">
         {workStepData.map((data, index) => {
           return (
-            <WorkSteps
-              data={data}
-              style={`max-xs:mt-3 p-4 sm:p-8 bg-white aspect-auto sm:max-w-78 ${
-                index % 2 == 1 ? "xs:ms-3 xs:mt-6 " : "xs:mb-6"
-              }`}
+            <motion.div
               key={index}
-            />
+              custom={index}
+              variants={itemVariant}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <WorkSteps
+                data={data}
+                style={`max-xs:mt-3 p-4 sm:p-8 bg-white aspect-auto sm:max-w-78 ${
+                  index % 2 == 1 ? "xs:ms-3 xs:mt-6 " : "xs:mb-6"
+                }`}
+              />
+            </motion.div>
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
