@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { LazyMotion, domAnimation, motion } from "framer-motion";
 import Introduction from "../components/introduction/Introduction";
 import Profile from "../components/profile/Profile";
@@ -10,6 +9,7 @@ import Profession from "../components/profession/Profession";
 import EducationCertifications from "../components/happyClients/HappyClients";
 import Testimonial from "../components/testimonial/Testimonial";
 import Contact from "../components/contact/Contact";
+import { getInViewProps } from "../lib/motionUtils";
 
 const pageContainer = {
   hidden: {},
@@ -26,6 +26,9 @@ const gentle = {
   show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: [0.2, 0.8, 0.2, 1] } },
 };
 
+const MotionDiv = motion.div;
+const MotionSection = motion.section;
+
 const Home = () => {
   return (
     <>
@@ -33,9 +36,7 @@ const Home = () => {
       <motion.div
         className="relative"
         variants={pageContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.12 }}
+        {...getInViewProps({ amount: 0.12 })}
       >
         <div className="introduction-profile-background">
           <div className="content">

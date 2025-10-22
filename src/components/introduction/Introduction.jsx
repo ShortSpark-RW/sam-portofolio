@@ -3,6 +3,7 @@ import "./introduction.css";
 import InformationSummary from "./InformationSummary";
 import { motion } from "framer-motion";
 import { introText, introImage } from "../../lib/motionVariants";
+import { getInViewProps } from "../../lib/motionUtils";
 
 // Information summary data
 const informationSummaryData = [
@@ -31,10 +32,8 @@ const Introduction = () => {
     >
       <motion.div
         className="w-full flex flex-col justify-between max-lg:text-center"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
+        {...getInViewProps({ amount: 0.3 })}
       >
         <motion.div className="pt-13 me-31.5 w-full lg:w-auto transition-all duration-500" variants={introText}>
           <p className="text-3xl xxs:text-4xl sm:max-xl:text-5xl xl:text-6xl font-semibold w-full">
@@ -73,9 +72,7 @@ const Introduction = () => {
       <motion.div
         className={`max-w-134 w-full h-full max-lg:mx-auto aspect-[536/636] relative`}
         variants={introImage}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.35 }}
+        {...getInViewProps({ amount: 0.35 })}
       >
         <img
           className={`shadow-2xl shadow-gray-200 w-full h-full absolute bottom-0 object-cover bg-white rounded-3xl`}
@@ -88,3 +85,4 @@ const Introduction = () => {
 };
 
 export default Introduction;
+

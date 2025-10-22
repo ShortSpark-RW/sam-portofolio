@@ -8,6 +8,7 @@ import TestimonialTemplate from "./TestimonialTemplate";
 import "./testimonial.css";
 import { motion } from "framer-motion";
 import { testimonialSection as section } from "../../lib/motionVariants";
+import { getInViewProps } from "../../lib/motionUtils";
 
 const testimonialData = [
   {
@@ -37,10 +38,8 @@ const Testimonial = () => {
   return (
     <motion.div
       className="flex mx-auto justify-center px-2 max-w-218 pb-10 md:pb-25"
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.18 }}
       variants={section}
+      {...getInViewProps({ amount: 0.18 })}
     >
       <div className="w-full h-full cursor-grab">
         <motion.p
@@ -72,3 +71,4 @@ const Testimonial = () => {
 };
 
 export default Testimonial;
+

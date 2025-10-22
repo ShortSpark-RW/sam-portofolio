@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { sectionVariant, itemVariant } from "../../lib/motionVariants";
+import { getInViewProps } from "../../lib/motionUtils";
 import WorkSteps from "./WorkSteps";
 
 const workStepData = [
@@ -42,10 +43,8 @@ const WorkProcess = () => {
 		<motion.div
 			className="content grid xl:grid-cols-2 xl:items-center px-2 py-5 md:py-10 lg:py-25 xl:py-35 max-xxl:px-4"
 			id="work-process"
-			initial="hidden"
-			whileInView="show"
-			viewport={{ once: true, amount: 0.2 }}
 			variants={sectionVariant}
+			{...getInViewProps({ amount: 0.2 })}
 		>
 			<div className="lg:pe-10 xl:pe-35.75 max-xs:mb-3 max-xl:mb-8">
 				<p className="section-title max-xl:text-center">Translation Process</p>
@@ -67,9 +66,7 @@ const WorkProcess = () => {
 							key={index}
 							custom={index}
 							variants={itemVariant}
-							initial="hidden"
-							whileInView="show"
-							viewport={{ once: true, amount: 0.2 }}
+							{...getInViewProps({ amount: 0.2 })}
 						>
 							<WorkSteps
 								data={data}
@@ -86,3 +83,4 @@ const WorkProcess = () => {
 };
 
 export default WorkProcess;
+

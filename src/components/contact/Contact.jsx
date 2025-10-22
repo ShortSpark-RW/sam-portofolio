@@ -5,6 +5,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { leftVariant, formVariant } from "../../lib/motionVariants";
+import { getInViewProps } from "../../lib/motionUtils";
 import Address from "./Address";
 import Form from "./Form";
 import SocialMedia from "../common/socialMedia/SocialMedia";
@@ -33,10 +34,8 @@ const Contact = () => {
       <motion.div
         className="content p-4 md:p-10 lg:p-22 bg-white rounded-2xl shadow-[0px_0px_90px_9px_rgba(0,_0,_0,_0.1)]"
         id="contact"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.18 }}
         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
+        {...getInViewProps({ amount: 0.18 })}
       >
         <div className="flex flex-col-reverse lg:gap-5 xl:gap-25.75 lg:flex-row justify-between">
           <motion.div variants={leftVariant}>
@@ -72,3 +71,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

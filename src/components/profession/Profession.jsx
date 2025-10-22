@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { colVariant, roleVariant } from "../../lib/motionVariants";
 import Roles from "./Roles";
+import { getInViewProps } from "../../lib/motionUtils";
 
 const rolesData = [
 	{
@@ -40,15 +41,10 @@ const Profession = () => {
 		<motion.div
 			className="content grid md:grid-cols-2 max-xxl:px-4 xxl:px-2 py-10 md:py-15 lg:py-37.5"
 			id="services"
-			initial="hidden"
-			whileInView="show"
-			viewport={{ once: true, amount: 0.18 }}
 			variants={colVariant}
+			{...getInViewProps({ amount: 0.18 })}
 		>
-			<motion.div
-				className="flex flex-col justify-between h-fit md:pe-8 lg:pe-35.75 max-md:text-center my-auto"
-				variants={colVariant}
-			>
+			<motion.div className="flex flex-col justify-between h-fit md:pe-8 lg:pe-35.75 max-md:text-center my-auto" variants={colVariant}>
 				<p className="section-title max-md:text-center">Services</p>
 				<div className="mt-6 text-[14px]">
 					<p className="text-xs sm:text-lg font-normal text-gray-400 mb-4">
@@ -71,14 +67,7 @@ const Profession = () => {
 
 			<motion.div className="" variants={colVariant}>
 				{rolesData.map((role, index) => (
-					<motion.div
-						key={index}
-						custom={index}
-						variants={roleVariant}
-						initial="hidden"
-						whileInView="show"
-						viewport={{ once: true, amount: 0.2 }}
-					>
+					<motion.div key={index} custom={index} variants={roleVariant} {...getInViewProps({ amount: 0.2 })}>
 						<Roles role={role} />
 					</motion.div>
 				))}
@@ -88,3 +77,4 @@ const Profession = () => {
 };
 
 export default Profession;
+

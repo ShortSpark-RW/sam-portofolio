@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { cardVariant } from "../../lib/motionVariants";
+import { getInViewProps } from "../../lib/motionUtils";
 
 const EducationCertifications = () => {
   const educationData = [
@@ -24,7 +25,7 @@ const EducationCertifications = () => {
   ];
 
   return (
-    <motion.div className="content py-10 md:py-25 flex flex-col items-center px-2" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.18 }}>
+    <motion.div className="content py-10 md:py-25 flex flex-col items-center px-2" {...getInViewProps({ amount: 0.18 })}>
       <div className="max-w-144.25 text-center mb-10">
         <p className="section-title mb-6">Education & Certifications</p>
         <p className="text-[14px] sm:text-lg text-soft-dark font-normal">
@@ -33,7 +34,7 @@ const EducationCertifications = () => {
       </div>
       <div className="grid md:grid-cols-3 gap-6 w-full max-w-4xl">
         {educationData.map((item, index) => (
-          <motion.div key={index} className="bg-white p-6 rounded-lg shadow-md border" custom={index} variants={cardVariant} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+          <motion.div key={index} className="bg-white p-6 rounded-lg shadow-md border" custom={index} variants={cardVariant} {...getInViewProps({ amount: 0.2 })}>
             <h3 className="text-lg font-semibold mb-2 text-gray-800">{item.title}</h3>
             <p className="text-sm font-medium text-blue-600 mb-1">{item.institution}</p>
             <p className="text-xs text-gray-500 mb-3">{item.period}</p>

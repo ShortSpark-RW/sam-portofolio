@@ -5,6 +5,7 @@ import person from "../../assets/images/person.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import SocialMedia from "../common/socialMedia/SocialMedia";
+import { getInViewProps } from "../../lib/motionUtils";
 
 const Profile = () => {
   const milestones = [
@@ -46,9 +47,7 @@ const Profile = () => {
           <motion.div
             className="md:w-1/3 shrink-0"
             variants={imgVariant}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.4 }}
+            {...getInViewProps({ amount: 0.4 })}
           >
             <div className="rounded-xl overflow-hidden">
               <motion.img
@@ -76,10 +75,8 @@ const Profile = () => {
 
           <motion.div
             className="md:w-2/3"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.35 }}
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
+            {...getInViewProps({ amount: 0.35 })}
           >
             <motion.p
               className="text-gray-600 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed"
@@ -116,9 +113,7 @@ const Profile = () => {
                   className="relative group pt-8"
                   custom={index}
                   variants={milestoneItem}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true, amount: 0.4 }}
+                  {...getInViewProps({ amount: 0.4 })}
                 >
                   <motion.div
                     className="absolute w-6 h-6 bg-white rounded-full -top-1 left-1/2 -ml-3 border-[3px] border-picto-primary shadow-md"
@@ -150,10 +145,8 @@ const Profile = () => {
 
         <motion.div
           className="flex justify-center gap-4 mt-8"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
           variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
+          {...getInViewProps({ amount: 0.3 })}
         >
           <motion.a
             className="btn xxs:btn-lg px-6 max-xs:px-2 xxs:py-3 btn-primary text-xs xxs:text-[14px] sm:text-[16px]"
@@ -180,3 +173,4 @@ const Profile = () => {
 };
 
 export default Profile;
+
