@@ -2,6 +2,7 @@ import person from "../../assets/images/person.png";
 import "./introduction.css";
 import InformationSummary from "./InformationSummary";
 import { motion } from "framer-motion";
+import { introText, introImage } from "../../lib/motionVariants";
 
 // Information summary data
 const informationSummaryData = [
@@ -21,15 +22,6 @@ const informationSummaryData = [
     description: "50+",
   },
 ];
-
-const introText = {
-  hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55 } },
-};
-const introImage = {
-  hidden: { opacity: 0, y: 18, scale: 0.995 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 80, damping: 14 } },
-};
 
 const Introduction = () => {
   return (

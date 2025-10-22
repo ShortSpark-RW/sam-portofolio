@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { colVariant, roleVariant } from "../../lib/motionVariants";
 import Roles from "./Roles";
 
 const rolesData = [
@@ -33,24 +34,6 @@ const rolesData = [
 			"Youth leadership, communication support, and climate change awareness initiatives through Dream 'n Dare Africa partnership.",
 	},
 ];
-
-const colVariant = {
-	hidden: { opacity: 0, y: 12 },
-	show: {
-		opacity: 1,
-		y: 0,
-		transition: { type: "spring", stiffness: 90, damping: 16 },
-	},
-};
-const roleVariant = {
-	hidden: { opacity: 0, y: 8, scale: 0.995 },
-	show: (i) => ({
-		opacity: 1,
-		y: 0,
-		scale: 1,
-		transition: { delay: i * 0.05, duration: 0.45 },
-	}),
-};
 
 const Profession = () => {
 	return (

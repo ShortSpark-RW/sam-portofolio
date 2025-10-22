@@ -1,37 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
+import { imgVariant, socialVariant, milestoneItem } from "../../lib/motionVariants";
 import person from "../../assets/images/person.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import SocialMedia from "../common/socialMedia/SocialMedia";
-
-const imgVariant = {
-  hidden: { opacity: 0, y: 12, scale: 0.995 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { type: "spring", stiffness: 80, damping: 12 },
-  },
-};
-
-const socialVariant = {
-  hidden: { opacity: 0, y: 6 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45 } },
-};
-
-const milestoneItem = {
-  hidden: { opacity: 0, y: 10 },
-  show: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.06,
-      duration: 0.48,
-      ease: [0.2, 0.8, 0.2, 1],
-    },
-  }),
-};
 
 const Profile = () => {
   const milestones = [

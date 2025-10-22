@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+/* eslint-disable no-unused-vars */
+import { LazyMotion, domAnimation, motion } from "framer-motion";
 import Introduction from "../components/introduction/Introduction";
 import Profile from "../components/profile/Profile";
 import WorkProcess from "../components/workProcess/WorkProcess";
@@ -27,55 +28,59 @@ const gentle = {
 
 const Home = () => {
   return (
-    <motion.div
-      className="relative"
-      variants={pageContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.12 }}
-    >
-      <div className="introduction-profile-background">
-        <div className="content">
-          <motion.section variants={enterUp} className="overflow-hidden">
-            <Introduction />
-          </motion.section>
+    <>
+    {/* <LazyMotion features={domAnimation}> */}
+      <motion.div
+        className="relative"
+        variants={pageContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.12 }}
+      >
+        <div className="introduction-profile-background">
+          <div className="content">
+            <motion.section variants={enterUp} className="overflow-hidden">
+              <Introduction />
+            </motion.section>
 
-          <motion.section variants={gentle} className="mt-6">
-            <Profile />
-          </motion.section>
+            <motion.section variants={gentle} className="mt-6">
+              <Profile />
+            </motion.section>
+          </div>
         </div>
-      </div>
 
-      <motion.section variants={enterUp} className="bg-soft-white pt-30">
-        <WorkProcess />
-      </motion.section>
+        <motion.section variants={enterUp} className="bg-soft-white pt-30">
+          <WorkProcess />
+        </motion.section>
 
-      <motion.section variants={enterUp}>
-        <Portfolio />
-      </motion.section>
+        <motion.section variants={enterUp}>
+          <Portfolio />
+        </motion.section>
 
-      {/* <div className="bg-gray-900">
-        <WorkTogether />
-      </div>
-      <div className="blog-background">
-        <Blog />
-      </div> */}
-      <motion.section variants={enterUp} className="bg-soft-white">
-        <Profession />
-      </motion.section>
+        {/* <div className="bg-gray-900">
+          <WorkTogether />
+        </div>
+        <div className="blog-background">
+          <Blog />
+        </div> */}
+        <motion.section variants={enterUp} className="bg-soft-white">
+          <Profession />
+        </motion.section>
 
-      <motion.section variants={gentle}>
-        <EducationCertifications />
-      </motion.section>
+        <motion.section variants={gentle}>
+          <EducationCertifications />
+        </motion.section>
 
-      <motion.section variants={enterUp}>
-        <Testimonial />
-      </motion.section>
+        <motion.section variants={enterUp}>
+          <Testimonial />
+        </motion.section>
 
-      <motion.section variants={gentle}>
-        <Contact />
-      </motion.section>
-    </motion.div>
+        <motion.section variants={gentle}>
+          <Contact />
+        </motion.section>
+      </motion.div>
+    {/* </LazyMotion> */}
+    </>
   );
 };
 

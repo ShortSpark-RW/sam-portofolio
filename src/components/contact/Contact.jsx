@@ -4,6 +4,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import { leftVariant, formVariant } from "../../lib/motionVariants";
 import Address from "./Address";
 import Form from "./Form";
 import SocialMedia from "../common/socialMedia/SocialMedia";
@@ -25,15 +26,6 @@ const addressData = [
     description: "+250 788 260 008",
   },
 ];
-
-const leftVariant = {
-  hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-const formVariant = {
-  hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 90, damping: 16 } },
-};
 
 const Contact = () => {
   return (

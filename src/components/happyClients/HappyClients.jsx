@@ -1,9 +1,5 @@
 import { motion } from "framer-motion";
-
-const cardVariant = {
-  hidden: { opacity: 0, y: 12 },
-  show: i => ({ opacity: 1, y: 0, transition: { delay: i * 0.06, duration: 0.45 } }),
-};
+import { cardVariant } from "../../lib/motionVariants";
 
 const EducationCertifications = () => {
   const educationData = [

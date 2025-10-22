@@ -7,6 +7,7 @@ import { EffectFade, Navigation, Pagination } from "swiper/modules";
 import TestimonialTemplate from "./TestimonialTemplate";
 import "./testimonial.css";
 import { motion } from "framer-motion";
+import { testimonialSection as section } from "../../lib/motionVariants";
 
 const testimonialData = [
   {
@@ -31,15 +32,6 @@ const testimonialData = [
     designation: "Dream 'n Dare Africa",
   },
 ];
-
-const section = {
-  hidden: { opacity: 0, y: 14 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 90, damping: 15 },
-  },
-};
 
 const Testimonial = () => {
   return (

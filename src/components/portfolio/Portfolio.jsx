@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { portfolioSection as section, card } from "../../lib/motionVariants";
 import Projects from "./Projects";
 import card1 from "../../assets/images/portfolio-images/card-11.png";
 import card2 from "../../assets/images/portfolio-images/card-22.png";
@@ -63,24 +64,6 @@ const projectData = [
   //   link: "#!",
   // },
 ];
-
-const section = {
-  hidden: { opacity: 0, y: 14 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 92, damping: 15 },
-  },
-};
-const card = {
-  hidden: { opacity: 0, y: 10, scale: 0.995 },
-  show: (i) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { delay: i * 0.06, duration: 0.45 },
-  }),
-};
 
 const Portfolio = () => {
   return (
